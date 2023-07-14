@@ -33,10 +33,62 @@ const getCards = async () => {
     return result
 }
 
+const getIlust = async () => {
+
+  let client, result;
+  try {
+    client = await pool.connect();
+    let data = await client.query(queries.getAllIlust);
+    result = data.rows;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+      client.release();
+  }
+  return result;
+};
+const getIlustByNombre = async (nombre) => {
+  let client, result;
+  try {
+      client = await pool.connect(); // Espera a abrir conexion
+      const data = await client.query(queries.getIlustByNombre, [nombre])
+      result = data.rows
+  } catch (err) {
+      console.log(err);
+      throw err;
+  } finally {
+      client.release();
+  }
+  return result
+}
+const createIlust = async (newIlust) => {
+  const { nombre, cif, direccion } = newIlust;
+  let client, result;
+  try {
+      client = await pool.connect(); // Espera a abrir conexion
+      const data = await client.query(queries.createIlust,[nombre, cif, direccion])
+      result = data.rowCount
+  } catch (err) {
+      console.log(err);
+      throw err;
+  } finally {
+      client.release();
+  }
+  return result
+}
+
+
+
+
+
 
   const cards_queries = {
     getCards,
-    getCardsByNombre
+    getCardsByNombre,
+    getIlust,
+    getIlustByNombre,
+    createIlust
     
 }
 
