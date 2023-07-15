@@ -6,13 +6,10 @@ const Dashboard = () => {
 
   const [nameCard, setNameCard] = useState("");
 
-
-
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/card`);
+        const response = await axios.get(`http://localhost:4000/api/card?nombre=${nameCard}`);
         const data = response.data;
         console.log(data);
       } catch (error) {
@@ -24,7 +21,7 @@ const Dashboard = () => {
   }, [nameCard]);
       
 
-  return <div><Searcher setNameCard={setNameCard}/></div>;
+  return <section><Searcher setNameCard={setNameCard}/></section>;
 };
 
 export default Dashboard;

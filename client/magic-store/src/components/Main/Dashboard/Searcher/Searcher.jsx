@@ -18,8 +18,6 @@ const handleSubmitSearch = (e) => {
   }
 };
 
-
-
   return (
   <article className="search-container">
     <form onSubmit={handleSubmitSearch}>
