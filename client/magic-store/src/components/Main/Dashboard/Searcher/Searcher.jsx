@@ -1,22 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-const Searcher = ({setNameCard}) => {
-
-const [search, setSearch]= useState('')
-
-
-  const handleChangeSearch = (e) => {
-    setSearch(e.target.value);
-  }
-
-const handleSubmitSearch = (e) => {
-  e.preventDefault();
-  if (search.trim() !== "") { 
-    setNameCard(search);
-    setSearch('');
-    
-  }
-};
+const Searcher = ({search, handleChangeSearch, handleSubmitSearch, setNameCard, order, changeOrder, handleChangeColor, selectedColor }) => {
 
   return (
   <article className="search-container">
@@ -24,6 +8,21 @@ const handleSubmitSearch = (e) => {
       <input type="text" placeholder="Busca" onChange={handleChangeSearch} value={search} ></input>
       <button type="submit" className="search">Buscar</button>
     </form>
+    
+    
+    
+    <div>
+    <button onClick={changeOrder}>{order}</button>
+      <select  onChange={handleChangeColor}>
+        <option value="">Seleccion Color</option>
+        <option value="Rojo">Red</option>
+        <option value="black">Black</option>
+        <option value="Verde">Green</option>
+        <option value="Azul">Blue</option>
+        <option value="Blanco">White</option>
+      </select>
+      
+    </div>
   </article>
   )
 };

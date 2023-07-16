@@ -1,0 +1,25 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+.cards-container{
+    width: 70%;
+    height: 70%;
+    background-color: yellow;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.dashboard{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 90%;
+}
+.visor{
+    width:20% ;
+    height: 30%;
+    background-color: black;
+    margin-left: 5%;
+}
+.search{
+    flex: 0 0 100%;
+}

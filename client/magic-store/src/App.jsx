@@ -9,11 +9,11 @@ function App() {
  
 
   return (<>
-  {/* <BrowserRouter> */}
-    <Header />
-    <Main/>
-    <Footer/>
-  {/* </BrowserRouter> */}
+ <BrowserRouter>
+      <Header />
+      <Main/>
+      <Footer/>
+    </BrowserRouter>
   </>
   )
 }
