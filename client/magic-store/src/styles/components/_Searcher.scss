@@ -1,0 +1,42 @@
+.search-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    line-height: 25px;
+    padding: 0 20px;
+    height: 25px;
+    background-color: #c52650;
+    color: #ffffff;
+  }
+  
+  .search-button :hover {
+    background-color: #54283b;
+  }
+  
+  .search-button :active {
+    background-color: #bf1e3c;
+  }
+  .search-container{
+    padding-top: 5%;
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  .search-tools button{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    line-height: 25px;
+    padding: 0 20px;
+    height: 25px;
+    background-color: #26c543;
+    color: #ffffff;
+  }
+ 
+  

@@ -5,24 +5,22 @@ const Searcher = ({search, handleChangeSearch, handleSubmitSearch, setNameCard, 
   return (
   <article className="search-container">
     <form onSubmit={handleSubmitSearch}>
+       <button  className="search-button" type="submit" >Buscar</button>
       <input type="text" placeholder="Busca" onChange={handleChangeSearch} value={search} ></input>
-      <button type="submit" className="search">Buscar</button>
     </form>
     
-    
-    
-    <div>
+    <section className="search-tools">
     <button onClick={changeOrder}>{order}</button>
       <select  onChange={handleChangeColor}>
-        <option value="">Seleccion Color</option>
+        <option value="">Color</option>
         <option value="Rojo">Red</option>
-        <option value="black">Black</option>
+        <option value="Negro">Black</option>
         <option value="Verde">Green</option>
         <option value="Azul">Blue</option>
         <option value="Blanco">White</option>
       </select>
       
-    </div>
+    </section>
   </article>
   )
 };

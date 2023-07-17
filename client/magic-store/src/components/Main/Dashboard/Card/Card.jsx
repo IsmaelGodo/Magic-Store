@@ -5,9 +5,11 @@ const Card = ({ nombre,color,descripcion, handleVisor, imagen }) => {
   onMouseEnter={handleVisor}
   img-info={imagen}
   desc-info={descripcion}
+  color-info={color}
   className={`${color}-card`}>
     
-      {nombre}{color}
+      <img className="img-color" src={`../src/assets/${color}.png`}/><p>{nombre}</p>
+      
     
   </div>;
 };

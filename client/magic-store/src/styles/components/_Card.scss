@@ -5,21 +5,24 @@
     @include card-basic;
     display: flex;
     flex-direction: column;
-    border: 4px solid red;
+    border: 4px solid rgb(217, 3, 3);
+    background-color: rgb(158, 18, 18);
     overflow: hidden;
 }
 .Azul-card{
     @include card-basic;
     display: flex;
     flex-direction: column;
-    border: 4px solid rgb(58, 96, 202);
+    border: 4px solid rgb(98, 120, 208);
+    background-color: rgb(57, 61, 170);
     overflow: hidden;
 }
 .Verde-card{
     @include card-basic;
     display: flex;
     flex-direction: column;
-    border: 4px solid rgb(58, 202, 94);
+    border: 4px solid rgb(86, 176, 108);
+    background-color: rgb(22, 126, 40);
     overflow: hidden;
 }
 .Blanco-card{
@@ -27,5 +30,22 @@
     display: flex;
     flex-direction: column;
     border: 4px solid rgb(165, 167, 171);
+    background-color: antiquewhite;
+    color: black;
     overflow: hidden;
+}
+.Negro-card{
+    @include card-basic;
+    display: flex;
+    flex-direction: column;
+    border: 4px solid rgb(147, 147, 147);
+    background-color: rgb(29, 29, 29);
+    overflow: hidden;
+}
+.img-color{
+    border-radius: 15px;
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    
 }

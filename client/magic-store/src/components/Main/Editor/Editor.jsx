@@ -4,7 +4,6 @@ import axios from "axios";
 
 const Editor = () => {
   
-    const [showForm1, setShowForm1] = useState(true);
     const [urlFetch, setUrlFetch] = useState("http://localhost:4000/api/ilustrator?");
     const [iluData, setIluData] = useState([]);
     
@@ -26,17 +25,18 @@ const Editor = () => {
 
       const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-          const response = await axios.post("http://localhost:4000/api/card", formData);
-          console.log("Respuesta del servidor:", response.data);
-        } catch (error) {
-          console.log("Error al enviar los datos:", error);
+        if (formData.nombre && formData.descripcion && formData.imagen && formData.color && formData.id_ilu) {
+          try {
+            const response = await axios.post("http://localhost:4000/api/card", formData);
+            console.log("Respuesta del servidor:", response.data);
+          } catch (error) {
+            console.log("Error al enviar los datos:", error);
+          }
+        } else {
+          alert("Debes Rellenar todos los campos");
         }
       };
-
-    const handleToggleForm = () => {
-      setShowForm1((prevShowForm1) => !prevShowForm1);
-    };
+      
 
     useEffect(() => {
       const fetchData = async () => {
@@ -59,7 +59,9 @@ const Editor = () => {
     }, [iluData]);
   
     return (
+      
       <section>
+        <article>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -102,7 +104,13 @@ const Editor = () => {
           </select>
           <button type="submit">Enviar</button>
         </form>
+        </article>
+        <article className="previsualizer">
+              {formData.nombre}{formData.descripcion}{formData.color}<img src={`${formData.imagen}`}/>{formData.id_ilu}
+        </article>
       </section>
+      
+
     );
   };
 
