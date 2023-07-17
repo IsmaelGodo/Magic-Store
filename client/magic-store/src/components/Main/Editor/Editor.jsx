@@ -29,6 +29,13 @@ const Editor = () => {
           try {
             const response = await axios.post("http://localhost:4000/api/card", formData);
             console.log("Respuesta del servidor:", response.data);
+            setFormData({
+              nombre: "",
+              descripcion: "",
+              imagen: "",
+              color: "",
+              id_ilu: "",
+            })
           } catch (error) {
             console.log("Error al enviar los datos:", error);
           }
