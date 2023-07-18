@@ -1,0 +1,46 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+.cards-container{
+    width: 70%;
+    height: 70%;
+    background-color: rgb(203, 203, 136);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.819);
+    flex-wrap: wrap;
+    display: flex;
+    border: 4px solid rgb(207, 209, 218);
+    border-radius: 5px;
+    overflow: auto;
+    
+}
+
+.dashboard{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 90%;
+}
+.visor {
+    border-radius: 10px;
+    border: 4px solid rgb(29, 28, 28);
+    width: 20%;
+    height: 70%;
+    margin-left: 5%;
+    background-color: rgb(148, 44, 44);
+    background-image: url("https://i.pinimg.com/564x/c0/f1/ad/c0f1adbca9bf157e5127e566b052d7fe.jpg"); /* Ruta de la imagen */
+    background-size: 100%; 
+    background-repeat: no-repeat;
+  }
+  .visor img {
+    padding-top: 20%;
+    width: 60%;
+    height: 60%;
+    
+  }
+  
+.search{
+  display: flex;
+    flex-direction: column;
+    
+}
+
+
