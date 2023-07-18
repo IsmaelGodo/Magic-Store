@@ -139,7 +139,6 @@ useEffect(() => {
     <section className="dashboard">
       
       <article className="search">
-        
         <Searcher
           handleChangeColor={handleChangeColor}
           order={order}
@@ -149,8 +148,10 @@ useEffect(() => {
           handleChangeSearch={handleChangeSearch}
           handleSubmitSearch={handleSubmitSearch}
           search={search}
+          SwichMode={SwichMode}
+          typeSearch={typeSearch}
         />
-        <button onClick={SwichMode}>{typeSearch}</button>
+        
         </article>
       <article className="cards-container">
       <article>

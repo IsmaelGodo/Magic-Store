@@ -1,8 +1,12 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import Swal from 'sweetalert2';
+
 
 
 const Editor = () => {
+
+  
   
     const [urlFetch, setUrlFetch] = useState("http://localhost:4000/api/ilustrator?");
     const [iluData, setIluData] = useState([]);
@@ -35,14 +39,17 @@ const Editor = () => {
               imagen: "",
               color: "",
               id_ilu: "",
-            })
+            });
+            Swal.fire('Éxito', 'Los datos se enviaron correctamente', 'success');
           } catch (error) {
             console.log("Error al enviar los datos:", error);
+            Swal.fire('Error', 'Hubo un error al enviar los datos', 'error');
           }
         } else {
-          alert("Debes Rellenar todos los campos");
+          Swal.fire('Advertencia', 'Debes rellenar todos los campos', 'warning');
         }
       };
+      
       
 
     useEffect(() => {
@@ -68,7 +75,7 @@ const Editor = () => {
     return (
       
       <section>
-        <article>
+        <article className="editor">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -113,7 +120,7 @@ const Editor = () => {
         </form>
         </article>
         <article className="previsualizer">
-              {formData.nombre}{formData.descripcion}{formData.color}<img src={`${formData.imagen}`}/>{formData.id_ilu}
+              <p>{formData.nombre}</p><p>{formData.descripcion}</p><p>{formData.color}</p><p>{formData.id_ilu}</p><img className="img-pre" src={`${formData.imagen}`}/>
         </article>
       </section>
       

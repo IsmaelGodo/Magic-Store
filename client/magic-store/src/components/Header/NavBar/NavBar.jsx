@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return <nav>
   <ul className="nav-bar">
+    <li><img className="gif1" src="./../src/assets/llama.gif"/></li>
     <li>
       <Link id="link-nav" to="/"><h3>Home</h3>  </Link>
     </li>

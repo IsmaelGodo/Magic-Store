@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from "react";
 
-const Searcher = ({search, handleChangeSearch, handleSubmitSearch, setNameCard, order, changeOrder, handleChangeColor, selectedColor }) => {
+const Searcher = ({search,SwichMode,typeSearch, handleChangeSearch, handleSubmitSearch, setNameCard, order, changeOrder, handleChangeColor, selectedColor }) => {
 
   return (
   <article className="search-container">
     <form onSubmit={handleSubmitSearch}>
        <button  className="search-button" type="submit" >Buscar</button>
-      <input type="text" placeholder="Busca" onChange={handleChangeSearch} value={search} ></input>
+      <input type="text" placeholder="Buscando" onChange={handleChangeSearch} value={search} ></input>
     </form>
+    <button className="swich" onClick={SwichMode}>{typeSearch}</button>
     
     <section className="search-tools">
     <button onClick={changeOrder}>{order}</button>
@@ -20,6 +21,7 @@ const Searcher = ({search, handleChangeSearch, handleSubmitSearch, setNameCard, 
         <option value="Blanco">White</option>
       </select>
       
+
     </section>
   </article>
   )
